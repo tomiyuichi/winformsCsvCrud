@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace winformsCsvCrud
                             .Select(parts => new { ID = parts[0], Name = parts[1], Age = parts[2] })
                             .ToList();
 
-            //dataGridView1.DataSource = data;
+            dataGridView1.DataSource = data;
         }
         private void SaveCsv()
         {
@@ -54,6 +55,11 @@ namespace winformsCsvCrud
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveCsv();
         }
     }
 }
